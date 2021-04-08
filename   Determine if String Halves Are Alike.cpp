@@ -15,6 +15,6 @@ public:
     bool halvesAreAlike(string s) 
     {
         int n = s.length();
-        return (fun(s.substr(0, n / 2)) == fun(s.substr(n / 2, n/ 2)) == true);
+        return (fun(s.substr(0, n / 2)) == fun(s.substr(n / 2, n/ 2)));
     }
 };
