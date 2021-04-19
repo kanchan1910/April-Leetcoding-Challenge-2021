@@ -42,4 +42,40 @@ public:
 // tc o(n) + o(n) ~ o(n)
 // sc o(1)
 
-// One pass solution ???
+
+
+// single pass solution----- single pass means that each node is visited only once
+class Solution {
+public:
+    ListNode* removeNthFromEnd(ListNode* head, int n) 
+    {
+        ListNode* slow = head;
+        ListNode* fast = head;
+        ListNode* prev = NULL;
+        n--;
+        while(n--)
+        {
+            fast = fast->next;
+        }
+        while(fast->next != NULL)
+        {
+            prev = slow;
+            slow = slow->next;
+            fast = fast->next;
+        }
+        // slow node will be out target nth node from the last
+        if(prev == NULL)
+        {
+            return slow->next;
+        }
+        else
+        {
+            prev->next = slow->next;
+        }
+        return head;
+    }
+};
+// fast pointer moves o(n) as it visits each node once
+// slow pointer moves o(nthnode) 
+// tc o(n)
+// sc o(1)
