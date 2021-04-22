@@ -24,4 +24,4 @@ public:
     }
 };
 // tc o(n*n)
-// sc o(1)
+// sc o(n)
