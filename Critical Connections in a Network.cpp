@@ -1,4 +1,5 @@
 // problem on bridges
+// tarjan's algorithm 
 class Solution {
 public:
     void dfs(vector<int>adj[], vector<int>&dis,vector<int>&low, vector<pair<int, int>>&bridges, int source, int parent)
